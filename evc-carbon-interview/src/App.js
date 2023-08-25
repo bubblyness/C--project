@@ -5,6 +5,7 @@ import { createStore } from "redux";
 import { Loading } from "./components/loading/Loading";
 import { Form } from "./components/form/Form";
 import { IntensityIndex } from "./components/intensityIndex/IntensityIndex";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   // const store = createStore();
@@ -15,7 +16,6 @@ function App() {
   const submitHandler = (selectedDate, postcode) => {
     const isoDate = selectedDate.toISOString();
     fetchData(isoDate, postcode);
-    // filterIntensity();
   };
 
   const fetchData = async (isoDate, postcode) => {
@@ -30,19 +30,12 @@ function App() {
 
       const response = await axios.get(url);
       setFetchedData(response.data.data);
-      console.log("DATA", response.data.data);
-      console.log("FetchedData", fetchedData.data);
       filterIntensity();
     } catch (error) {
       console.error("Error", error);
     }
     setLoading(false);
   };
-
-  // useEffect(() => {
-  //   console.log("IntensityIndex state has changed:");
-  // filterIntensity();
-  // }, [fetchedData]);
 
   const filterIntensity = () => {
     const lowIntensityItems = fetchedData.data.filter((item) => {
@@ -51,14 +44,13 @@ function App() {
       );
     });
     setLowRangeIntensity(lowIntensityItems);
-    console.log("lowIntensityItems", lowIntensityItems);
   };
 
   return (
     <div>
       {loading && <Loading />}
       <Form submitHandler={submitHandler} />
-      <IntensityIndex lowRangeIntensity={lowRangeIntensity} />
+      <IntensityIndex />
     </div>
   );
 }

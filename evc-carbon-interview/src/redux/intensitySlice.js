@@ -12,7 +12,6 @@ export const intensitySlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { setIntensity } = intensitySlice.actions;
 
 export default intensitySlice.reducer;
