@@ -1,28 +1,10 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
 
 export const Form = ({ submitHandler }) => {
-  const [startDate, setStartDate] = useState();
-  const [postCode, setPostCode] = useState("");
-  console.log("start date", startDate);
-
-  const mainApi = async () => {
-    // setLoading(true);
-    const isoDate = startDate.toISOString();
-    try {
-      const response = await axios.get(
-        `https://api.carbonintensity.org.uk/regional/intensity/${isoDate}/fw24h/postcode/${postCode}`
-      );
-
-      const result = response.data.data;
-      console.log("mainData", result);
-      // setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const [selectedDate, setSelectedDate] = useState();
+  const [postcode, setPostcode] = useState("");
 
   return (
     <div>
@@ -30,19 +12,20 @@ export const Form = ({ submitHandler }) => {
       <p>Pick a date : </p>
 
       <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        selected={selectedDate}
+        onChange={(date) => setSelectedDate(date)}
       />
       <div>
-        Post Code:{" "}
+        Post Code:
         <input
-          value={postCode}
+          value={postcode}
           type="text"
-          onChange={(e) => setPostCode(e.target.value)}
+          onChange={(e) => setPostcode(e.target.value)}
         />
       </div>
-      {/* <button onClick={() => submitHandler(startDate, postCode)}> */}
-      <button onClick={() => mainApi()}>Submit</button>
+      <button onClick={() => submitHandler(selectedDate, postcode)}>
+        Submit
+      </button>
       {/* </form> */}
     </div>
   );

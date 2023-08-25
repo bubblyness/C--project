@@ -1,67 +1,64 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import dayjs from "dayjs";
 import { createStore } from "redux";
 import { Loading } from "./components/loading/Loading";
 import { Form } from "./components/form/Form";
+import { IntensityIndex } from "./components/intensityIndex/IntensityIndex";
 
 function App() {
   // const store = createStore();
+  const [fetchedData, setFetchedData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [lowRangeIntensity, setLowRangeIntensity] = useState([]);
 
-  const [loading, setLoading] = useState(true);
-  const [startDate, setStartDate] = useState("");
-  const [postCode, setPostCode] = useState("");
-
-  console.log("startDate", startDate);
-  console.log("DATE", dayjs().format("YYYY-MM-DDThh:mmz"));
-
-  const now = Date.now();
-  const nowISO = new Date(now).toISOString();
-  console.log("nowISO", nowISO);
-
-  const submitHandler = (date, postCode) => {
-    const isoDate = date.toISOString();
-    console.log("DATE AND CODE", isoDate, postCode);
-    mainApi(isoDate, postCode);
+  const submitHandler = (selectedDate, postcode) => {
+    const isoDate = selectedDate.toISOString();
+    fetchData(isoDate, postcode);
+    // filterIntensity();
   };
 
-  const dateHandler = () => {
-    setStartDate(dayjs().format("YYYY-MM-DDThh:mmz"));
-  };
-
-  const mainApi = async (date, postCode) => {
-    setLoading(true);
-    try {
-      const response = await axios.get(
-        `https://api.carbonintensity.org.uk/regional/intensity/${date}/fw24h/postcode/${postCode}`
-      );
-      debugger;
-      const result = await response.json();
-      console.log("mainData", result.data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      debugger;
+  const fetchData = async (isoDate, postcode) => {
+    if (!isoDate || !postcode) {
+      alert("Please select a date and enter a post code.");
+      return;
     }
+    setLoading(true);
+
+    try {
+      const url = `https://api.carbonintensity.org.uk/regional/intensity/${isoDate}/fw24h/postcode/${postcode}`;
+
+      const response = await axios.get(url);
+      setFetchedData(response.data.data);
+      console.log("DATA", response.data.data);
+      console.log("FetchedData", fetchedData.data);
+      filterIntensity();
+    } catch (error) {
+      console.error("Error", error);
+    }
+    setLoading(false);
   };
 
   // useEffect(() => {
-  //   mainApi();
-  // }, []);
+  //   console.log("IntensityIndex state has changed:");
+  // filterIntensity();
+  // }, [fetchedData]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://api.carbonintensity.org.uk/intensity`)
-  //     .then((res) => console.log(res.data.data))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  const filterIntensity = () => {
+    const lowIntensityItems = fetchedData.data.filter((item) => {
+      return (
+        item.intensity.index === "low" || item.intensity.index === "very low"
+      );
+    });
+    setLowRangeIntensity(lowIntensityItems);
+    console.log("lowIntensityItems", lowIntensityItems);
+  };
 
   return (
     <div>
-      {loading ? <Loading /> : null}
-
+      {loading && <Loading />}
       <Form submitHandler={submitHandler} />
+      <IntensityIndex lowRangeIntensity={lowRangeIntensity} />
     </div>
   );
 }
