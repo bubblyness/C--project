@@ -50,7 +50,7 @@ function App() {
     <div>
       {loading && <Loading />}
       <Form submitHandler={submitHandler} />
-      <IntensityIndex />
+      <IntensityIndex lowRangeIntensity={lowRangeIntensity} />
     </div>
   );
 }
