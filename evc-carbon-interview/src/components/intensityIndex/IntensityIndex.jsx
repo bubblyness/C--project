@@ -7,7 +7,7 @@ export const IntensityIndex = ({ lowRangeIntensity }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className=".place-items-center .m-auto m-40">
       <h3>Low Range Intensity Data</h3>
       {lowRangeIntensity.map((item, index) => {
         const firstLowIntensityValue = item.find(
