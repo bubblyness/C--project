@@ -30,7 +30,9 @@ function App() {
 
       const response = await axios.get(url);
       setFetchedData(response.data.data);
-      filterIntensity();
+      console.log("response.data.data", response.data.data);
+      // console.log("fetchedData", fetchedData);
+      filterIntensity(response.data.data);
     } catch (error) {
       console.error("Error", error);
     }
@@ -45,6 +47,10 @@ function App() {
     });
     setLowRangeIntensity(lowIntensityItems);
   };
+
+  // useEffect(() => {
+  //   filterIntensity();
+  // }, [fetchedData]);
 
   return (
     <div>
