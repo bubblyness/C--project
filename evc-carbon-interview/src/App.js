@@ -29,22 +29,24 @@ function App() {
       const url = `https://api.carbonintensity.org.uk/regional/intensity/${isoDate}/fw24h/postcode/${postcode}`;
 
       const response = await axios.get(url);
-      setFetchedData(response.data.data);
-      console.log("response.data.data", response.data.data);
-      // console.log("fetchedData", fetchedData);
-      filterIntensity(response.data.data);
+      const responseData = response.data.data.data;
+      console.log("responseData", responseData);
+      setFetchedData(responseData);
+      filterIntensity(responseData);
     } catch (error) {
       console.error("Error", error);
     }
     setLoading(false);
   };
 
-  const filterIntensity = () => {
-    const lowIntensityItems = fetchedData.data.filter((item) => {
+  const filterIntensity = (data) => {
+    console.log("HEYdata", data);
+    const lowIntensityItems = data.filter((item) => {
       return (
         item.intensity.index === "low" || item.intensity.index === "very low"
       );
     });
+    console.log("lowIntensityItems", lowIntensityItems);
     setLowRangeIntensity(lowIntensityItems);
   };
 
