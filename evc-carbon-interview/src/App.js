@@ -7,8 +7,9 @@ import { Form } from "./components/form/Form";
 import { IntensityIndex } from "./components/intensityIndex/IntensityIndex";
 import { useDispatch, useSelector } from "react-redux";
 
+const store = createStore(reducer);
+
 function App() {
-  // const store = createStore();
   const [fetchedData, setFetchedData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [lowRangeIntensity, setLowRangeIntensity] = useState([]);

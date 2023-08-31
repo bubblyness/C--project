@@ -7,19 +7,48 @@ export const IntensityIndex = ({ lowRangeIntensity }) => {
   const dispatch = useDispatch();
 
   console.log("lowRangeIntensity INTENSITY", lowRangeIntensity);
+
+  // const findNextAvailableSlot = (intensityData) => {
+  //   const nextSlot = intensityData.find((item) => {
+  //     if (
+  //       item.intensity.index !== "low" ||
+  //       item.intensity.index !== "very low"
+  //     ) {
+  //       return nextSlot ? nextSlot.from : "No available slots";
+  //     }
+  //   });
+  // };
+
+  const findNextAvailableSlot = (intensityData) => {
+    const nextSlot = intensityData.find(
+      (item) =>
+        item.intensity.index !== "low" || item.intensity.index !== "very low"
+    );
+    return nextSlot ? nextSlot.from : "No available slots";
+  };
+
   return (
-    <div className=".place-items-center .m-auto m-40">
-      <h3>Low Range Intensity Data</h3>
-      <ul>
+    <div className=".place-items-center .m-auto m-40 bg-green-600 rounded-lg">
+      <h2 className="p-2 m-5 text-2xl font-semibold">
+        Low Range Intensity Data
+      </h2>
+      <ul className="p-2 m-5">
         {lowRangeIntensity.map((item, index) => {
           console.log("item", item);
-
           return (
             <div key={index}>
               {lowRangeIntensity ? (
-                <p>{item.intensity.index}</p>
+                <>
+                  <span className="text-medium font-semibold">
+                    Carbon Intensity:{" "}
+                  </span>
+                  <span>{item.intensity.index}</span>
+                </>
               ) : (
-                <p>Next available date and time is: </p>
+                <p>
+                  Next available slot for charging:{" "}
+                  {findNextAvailableSlot(lowRangeIntensity)}
+                </p>
               )}
             </div>
           );
