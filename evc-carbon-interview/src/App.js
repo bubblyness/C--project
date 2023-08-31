@@ -29,6 +29,7 @@ function App() {
       const url = `https://api.carbonintensity.org.uk/regional/intensity/${isoDate}/fw24h/postcode/${postcode}`;
 
       const response = await axios.get(url);
+      console.log("response", response);
       const responseData = response.data.data.data;
       console.log("responseData", responseData);
       setFetchedData(responseData);
