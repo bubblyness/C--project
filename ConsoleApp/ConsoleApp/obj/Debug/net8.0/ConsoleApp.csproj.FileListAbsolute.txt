@@ -1,0 +1,15 @@
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.AssemblyInfoInputs.cache
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.AssemblyInfo.cs
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.csproj.CoreCompileInputs.cache
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.sourcelink.json
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/bin/Debug/net8.0/ConsoleApp
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/bin/Debug/net8.0/ConsoleApp.deps.json
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/bin/Debug/net8.0/ConsoleApp.runtimeconfig.json
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/bin/Debug/net8.0/ConsoleApp.dll
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/bin/Debug/net8.0/ConsoleApp.pdb
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.dll
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/refint/ConsoleApp.dll
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.pdb
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ConsoleApp.genruntimeconfig.cache
+/Users/vanessa/Desktop/code/ConsoleApp/ConsoleApp/obj/Debug/net8.0/ref/ConsoleApp.dll
