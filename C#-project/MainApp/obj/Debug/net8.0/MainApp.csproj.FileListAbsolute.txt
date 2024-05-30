@@ -1,0 +1,14 @@
+/Users/vanessa/Desktop/code/C#-project/MainApp/bin/Debug/net8.0/MainApp
+/Users/vanessa/Desktop/code/C#-project/MainApp/bin/Debug/net8.0/MainApp.deps.json
+/Users/vanessa/Desktop/code/C#-project/MainApp/bin/Debug/net8.0/MainApp.runtimeconfig.json
+/Users/vanessa/Desktop/code/C#-project/MainApp/bin/Debug/net8.0/MainApp.dll
+/Users/vanessa/Desktop/code/C#-project/MainApp/bin/Debug/net8.0/MainApp.pdb
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.AssemblyInfoInputs.cache
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.AssemblyInfo.cs
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.csproj.CoreCompileInputs.cache
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.dll
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/refint/MainApp.dll
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.pdb
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.genruntimeconfig.cache
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/ref/MainApp.dll
