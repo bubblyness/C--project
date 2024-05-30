@@ -12,3 +12,4 @@
 /Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.pdb
 /Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.genruntimeconfig.cache
 /Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/ref/MainApp.dll
+/Users/vanessa/Desktop/code/C#-project/MainApp/obj/Debug/net8.0/MainApp.sourcelink.json
