@@ -57,11 +57,26 @@ using Microsoft.VisualBasic;
 
 var names = new List<string> { "Jiwon", "Bori", "Katarina" };
 
-names.Add("Amelia");
-names.Add("Eleanor");
+// names.Add("Amelia"); // LIST<T>
+// names.Add("Eleanor"); 
+
+names = [.. names, "Bobae"];
 
 foreach (var name in names)
 {
-    Console.WriteLine($"Hey {name.ToUpper()}!!");
+    Console.WriteLine($"Hey {name.ToUpper()}");
 }
 
+
+
+// foreach (var name in names[2..4]) // including [2] and excluding [4]
+// {
+//     Console.WriteLine($"Hey {name.ToUpper()}");
+// }
+
+// Console.WriteLine(names[0]);
+// Console.WriteLine(names[^1]); // latest syntax of getting the last element in an array
+
+// * enumeration: an enumeration is a complete, ordered listing o fall the items in a collection. Commonly used in computer science to refer to a listing of all the elements of a set. 
+// Can't change the length/size of an array once it's been fixed/decided in length. You can copy and make a copied version of the old array. 
+// You can default to lists for most of your operations not arrays. 
