@@ -53,19 +53,25 @@
 // }
 // }
 
+using System.Net.WebSockets;
 using Microsoft.VisualBasic;
 
-var names = new List<string> { "Jiwon", "Bori", "Katarina" };
-
+// var names = new List<string> { "Jiwon", "Bori", "Katarina" };
+var numbers = new List<int> { 45, 56, 99, 48, 67, 78 };
 // names.Add("Amelia"); // LIST<T>
 // names.Add("Eleanor"); 
 
-names = [.. names, "Bobae"];
+// names = [.. names, "Bobae"];
 
-foreach (var name in names)
-{
-    Console.WriteLine($"Hey {name.ToUpper()}");
-}
+// names.Sort(); 
+Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
+numbers.Sort();
+Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
+
+// foreach (var number in numbers)
+// {
+//     Console.WriteLine($"{number}");
+// }
 
 
 
