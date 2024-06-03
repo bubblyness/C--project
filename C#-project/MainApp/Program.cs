@@ -56,6 +56,8 @@
 using System.Net.WebSockets;
 using Microsoft.VisualBasic;
 
+// LIST<T> AND COLLECTION OF DATA
+
 // var names = new List<string> { "Jiwon", "Bori", "Katarina" };
 var numbers = new List<int> { 45, 56, 99, 48, 67, 78 };
 // names.Add("Amelia"); // LIST<T>
@@ -64,16 +66,16 @@ var numbers = new List<int> { 45, 56, 99, 48, 67, 78 };
 // names = [.. names, "Bobae"];
 
 // names.Sort(); 
-Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
-numbers.Sort();
-Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
+// Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
+// numbers.Sort();
+// Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
 
 // foreach (var number in numbers)
 // {
 //     Console.WriteLine($"{number}");
 // }
 
-
+// ARRAYS, LISTS, INDEXING AND FOREACH SYNTAX
 
 // foreach (var name in names[2..4]) // including [2] and excluding [4]
 // {
@@ -86,3 +88,29 @@ Console.WriteLine($"I found 99 at index {numbers.IndexOf(99)}");
 // * enumeration: an enumeration is a complete, ordered listing o fall the items in a collection. Commonly used in computer science to refer to a listing of all the elements of a set. 
 // Can't change the length/size of an array once it's been fixed/decided in length. You can copy and make a copied version of the old array. 
 // You can default to lists for most of your operations not arrays. 
+
+// LANGUAGE INTEGRATED QUERY(LINQ) AND IENUMERABLE 
+// Specify the data source.
+// int[] scores = [97, 92, 81, 60];
+List<int> scores = [97, 92, 81, 60];
+
+for (int i = 0; i < scores.Count; i++)
+{
+    if (scores[i] > 80)
+        Console.WriteLine($"Found a score over 80 {scores[i]}");
+}
+return;
+
+// Define the query expression.
+IEnumerable<int> scoreQuery =
+    from score in scores
+    where score > 80
+    select score;
+
+// Execute the query.
+foreach (var i in scoreQuery)
+{
+    Console.Write(i + " ");
+}
+
+// Output: 97 92 81
